@@ -33,6 +33,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Set environment variable for CC_PYTHON_MODULE
+      run: echo "CC_PYTHON_MODULE=main" >> $GITHUB_ENV
+
     - name: Build the FastAPI application
       run: |
         uvicorn main:app --host 0.0.0.0 --port 8000 &
