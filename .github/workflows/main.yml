@@ -1,0 +1,15 @@
+name: FastAPI Application
+
+project: FastAPI-User-App
+
+build:
+  dockerfile_path: Dockerfile
+
+deploy:
+  provider: zeet
+  type: fastapi
+  environment:
+    variables:
+      DATABASE_URL: "mysql+pymysql://uarqvaj7pairfte0:dF1fNuTI6BJkFcvTgak3@buewulu9b7imhll3mi9u-mysql.services.clever-cloud.com:3306/buewulu9b7imhll3mi9u"
+  commands:
+    - uvicorn main:app --host 0.0.0.0 --port 8000
